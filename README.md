@@ -12,4 +12,4 @@ follow the examples in `tests/test.rs` and add a test case.
 5. Run `cargo test --release` again to check if the equality holds.
 
 Note that expressions are in prefix (lisp) notation; 
-pattern variables in a rewrite rule is prefixed with `?`.
+pattern variables in a rewrite rule are prefixed with `?`.
