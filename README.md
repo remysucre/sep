@@ -13,3 +13,8 @@ follow the examples in `tests/test.rs` and add a test case.
 
 Note that expressions are in prefix (lisp) notation; 
 pattern variables in a rewrite rule are prefixed with `?`.
+The prover is sound but incomplete,
+meaning that when it returns `ok` the equality must hold,
+but otherwise the equality may or may not hold.
+The checker will give a false negative when
+the equality proof is a **very** long chain of rewrites.
