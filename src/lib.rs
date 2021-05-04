@@ -19,12 +19,10 @@ define_language! {
 }
 
 pub fn axioms() -> Vec<Rewrite<CSr, ()>> {
-    let mut rules = vec![];
-
     // directed rewrite rules
-    rules.extend(vec![
+    let mut rules = vec![
         rw!("simple-l"   ; "(+ ?a 1)"         => "1"                        ),
-    ]);
+    ];
 
     // bidirectional rewrite rules
     rules.extend(vec![
