@@ -10,3 +10,6 @@ To use this program:
 4. To check if an equality follows from the axioms,
 follow the examples in `tests/test.rs` and add a test case.
 5. Run `cargo test --release` again to check if the equality holds.
+
+Note that expressions are in prefix (lisp) notation; 
+pattern variables in a rewrite rule is prefixed with `?`.
