@@ -21,21 +21,22 @@ define_language! {
 pub fn axioms() -> Vec<Rewrite<CSr, ()>> {
     // directed rewrite rules
     let mut rules = vec![
-        rw!("simple-l"   ; "(+ ?a 1)"         => "1"                        ),
+        // rw!("simple-l"   ; "(+ ?a 1)"         => "1"                        ),
     ];
 
     // bidirectional rewrite rules
     rules.extend(vec![
-        rw!("+-assoc"    ; "(+ ?a (+ ?b ?c))" <=> "(+ (+ ?a ?b) ?c)"        ),
-        rw!("+-comm"     ; "(+ ?a ?b)"        <=> "(+ ?b ?a)"               ),
-        rw!("0-+-id"     ; "(+ ?a 0)"         <=> "?a"                      ),
-        rw!(".-assoc"    ; "(. ?a (. ?b ?c))" <=> "(. (. ?a ?b) ?c)"        ),
-        rw!("1-.-id-r"   ; "(. ?a 1)"         <=> "?a"                      ),
-        rw!("1-.-id-l"   ; "(. 1 ?a)"         <=> "?a"                      ),
-        rw!(".-+-dist-l" ; "(. ?a (+ ?b ?c))" <=> "(+ (. ?a ?b) (. ?a ?c))" ),
-        rw!(".-+-dist-r" ; "(. (+ ?b ?c) ?a)" <=> "(+ (. ?b ?a) (. ?c ?a))" ),
-        rw!("closure-l"  ; "(* ?a)"           <=> "(+ 1 (. (* ?a) ?a))"     ),
-        rw!("closure-r"  ; "(* ?a)"           <=> "(+ 1 (. ?a (* ?a)))"     ),
+        rw!("+-idem"    ; "(+ ?a ?a)" <=> "?a"        ),
+        // rw!("+-assoc"    ; "(+ ?a (+ ?b ?c))" <=> "(+ (+ ?a ?b) ?c)"        ),
+        // rw!("+-comm"     ; "(+ ?a ?b)"        <=> "(+ ?b ?a)"               ),
+        // rw!("0-+-id"     ; "(+ ?a 0)"         <=> "?a"                      ),
+        // rw!(".-assoc"    ; "(. ?a (. ?b ?c))" <=> "(. (. ?a ?b) ?c)"        ),
+        // rw!("1-.-id-r"   ; "(. ?a 1)"         <=> "?a"                      ),
+        // rw!("1-.-id-l"   ; "(. 1 ?a)"         <=> "?a"                      ),
+        // rw!(".-+-dist-l" ; "(. ?a (+ ?b ?c))" <=> "(+ (. ?a ?b) (. ?a ?c))" ),
+        // rw!(".-+-dist-r" ; "(. (+ ?b ?c) ?a)" <=> "(+ (. ?b ?a) (. ?c ?a))" ),
+        // rw!("closure-l"  ; "(* ?a)"           <=> "(+ 1 (. (* ?a) ?a))"     ),
+        // rw!("closure-r"  ; "(* ?a)"           <=> "(+ 1 (. ?a (* ?a)))"     ),
     ].concat());
     rules
 }
